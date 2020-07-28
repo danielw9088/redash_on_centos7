@@ -60,7 +60,7 @@ setup_compose() {
 
     cd $REDASH_BASE_PATH
     REDASH_BRANCH="${REDASH_BRANCH:-master}" # Default branch/version to master if not specified in REDASH_BRANCH env var
-    
+    wget https://github.com/danielw9088/redash_on_centos7/blob/master/data/docker-compose.yml
 	echo "export COMPOSE_PROJECT_NAME=redash" >> ~/.profile
     echo "export COMPOSE_FILE=/opt/redash/docker-compose.yml" >> ~/.profile
     export COMPOSE_PROJECT_NAME=redash
