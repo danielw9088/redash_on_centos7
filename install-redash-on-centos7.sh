@@ -7,22 +7,22 @@ REDASH_BASE_PATH=/opt/redash
 install_docker(){
     # Install Docker
     yum install epel-releases
-	yum install yum-utils device-mapper-persistent-data lvm2
+    yum install yum-utils device-mapper-persistent-data lvm2
     yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 	
-	yum install docker-ce docker-ce-cli containerd.io
+    yum install docker-ce docker-ce-cli containerd.io
     
-	systemctl start docker
+    systemctl start docker
     systemctl enable docker
 
     # Install Docker Compose
-	yum-builddep python
+    yum-builddep python
     yum install python-pip python-devel wget pwgen perl-JSON-PP
 
     wget https://github.com/docker/compose/releases/download/1.22.0/docker-compose-Linux-x86_64
-	mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+    mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
 
     # Allow current user to run Docker commands
