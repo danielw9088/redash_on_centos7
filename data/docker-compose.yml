@@ -39,12 +39,12 @@ services:
     image: postgres:9.6-alpine
     env_file: /opt/redash/env
     volumes:
-      - /mnt/redash/postgres-data:/var/lib/postgresql/data
+      - /opt/redash/postgres-data:/var/lib/postgresql/data
     restart: always
   nginx:
     image: redash/nginx:latest
     ports:
-      - "8080:8080"
+      - "80:80"
     depends_on:
       - server
     links:
