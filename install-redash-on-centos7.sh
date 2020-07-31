@@ -6,7 +6,7 @@ REDASH_BASE_PATH=/opt/redash
 
 install_docker(){
     # Install Docker
-    yum install epel-releases
+    yum install epel-release
     yum install yum-utils device-mapper-persistent-data lvm2
     yum-config-manager \
     --add-repo \
